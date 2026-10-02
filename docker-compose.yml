@@ -59,7 +59,7 @@ services:
     container_name: lp2taller3-web
     restart: unless-stopped
     environment:
-      SECRET_KEY: ${2509}
+      SECRET_KEY: ${SECRET_KEY}
       # TODO 3: Indica la URL base de la API vista DESDE OTRO CONTENEDOR.
       #         No es http://localhost:8000 (eso apuntaría al propio
       #         contenedor 'web'); debe usar el nombre del servicio "api".
