@@ -28,10 +28,12 @@ services:
     healthcheck:
       # TODO 1: Completa el comando que verifica si Postgres ya está listo
       #         para aceptar conexiones. Pista: pg_isready acepta -U <usuario>
+      pg_isready: -U <usuario>
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
       interval: 5s
       timeout: 5s
       retries: 5
+     
 
   api:
     build:
@@ -42,7 +44,8 @@ services:
       # TODO 2: Construye la URL de conexión a PostgreSQL con el formato:
       #   postgresql://<usuario>:<password>@<host>:<puerto>/<basededatos>
       #   El host NO es "localhost": es el nombre del servicio "database".
-      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB}
+       postgresql://<usuario>:<password>@database:5432/<basededatos>
+    DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB}
     depends_on:
       database:
         # Espera a que el healthcheck de 'database' pase antes de arrancar.
@@ -56,7 +59,7 @@ services:
     container_name: lp2taller3-web
     restart: unless-stopped
     environment:
-      SECRET_KEY: ${SECRET_KEY}
+      SECRET_KEY: ${2509}
       # TODO 3: Indica la URL base de la API vista DESDE OTRO CONTENEDOR.
       #         No es http://localhost:8000 (eso apuntaría al propio
       #         contenedor 'web'); debe usar el nombre del servicio "api".
@@ -66,7 +69,8 @@ services:
       #         corriendo antes de iniciar (usa la misma sintaxis de arriba,
       #         puede ser una simple lista si no necesitas esperar un
       #         healthcheck: depends_on: - api)
-      - api
+      depends_on:
+        - api
     ports:
       - "5000:5000"
 
