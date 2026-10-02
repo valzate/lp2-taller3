@@ -16,8 +16,9 @@ class CategoriaBase(BaseModel):
     """Forma de una categoría tal como se expone en la API."""
 
     id: int
-
+    nombre : str
     # TODO 1: agrega el campo 'nombre: str'
+    
 
     class Config:
         # Permite construir este esquema directamente a partir de un
@@ -30,6 +31,14 @@ class ProductoBase(BaseModel):
 
     id: int
     sku: str
+    precio : float
+    marca : str
+    nombre : str
+    foto : str | None = None
+    stock : int
+    activo : bool
+    disponible : bool
+    categoria : CategoriaBase
 
     # TODO 2: agrega los campos que faltan, con el tipo correcto:
     #   marca: str
