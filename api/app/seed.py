@@ -28,6 +28,8 @@ def cargar_datos():
         # TODO 1: Abre RUTA_PRODUCTOS con encoding="utf-8" y usa json.load()
         #         para obtener la lista de productos.
         # datos = ...
+        with open(RUTA_PRODUCTOS, "r", encoding="utf-8") as f:
+            datos = json.load(f)
 
         # TODO 2: Por cada item en 'datos':
         #   a) Busca la categoría por nombre:
@@ -40,12 +42,18 @@ def cargar_datos():
         #      sáltalo con 'continue' para no duplicar.
         #   d) Crea el Producto con los campos del JSON y
         #      categoria_id=categoria.id, y agrégalo con db.add(producto).
+        categoria =db.query(Categoria).filter_by(nombre=datos["categoria"]).first()
+        if categoria is None:
+            categoria = Categoria(nombre=datos["categoria"])
+            db.add(categoria)
+            db.flush()  # obtiene el id sin hacer commit todavía
 
         # TODO 3: Confirma todo con db.commit()
+        db.commit()
 
         # TODO 4: Imprime cuántos productos se cargaron, por ejemplo:
         #         print(f"Se cargaron {len(datos)} productos.")
-        pass
+        print(f"Se cargaron {len(datos)} productos.")
     finally:
         db.close()
 
