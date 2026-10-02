@@ -28,7 +28,6 @@ services:
     healthcheck:
       # TODO 1: Completa el comando que verifica si Postgres ya está listo
       #         para aceptar conexiones. Pista: pg_isready acepta -U <usuario>
-      pg_isready: -U <usuario>
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
       interval: 5s
       timeout: 5s
