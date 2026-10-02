@@ -15,6 +15,7 @@ from .routers import categorias, productos
 #         Pista: Base.metadata.create_all(bind=engine)
 #         (Esto reemplaza al "flask init-db" del Taller 2; aquí lo hacemos
 #         directamente al arrancar la aplicación.)
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Tienda Virtual API",
@@ -25,6 +26,8 @@ app = FastAPI(
 # TODO 2: Registra los routers de productos y categorías con
 #         app.include_router(productos.router)
 #         app.include_router(categorias.router)
+app.include_router(productos.router)
+app.include_router(categorias.router)
 
 
 @app.get("/")
