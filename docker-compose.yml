@@ -69,7 +69,6 @@ services:
       #         corriendo antes de iniciar (usa la misma sintaxis de arriba,
       #         puede ser una simple lista si no necesitas esperar un
       #         healthcheck: depends_on: - api)
-      depends_on:
         - api
     ports:
       - "5000:5000"
