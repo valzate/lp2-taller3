@@ -43,7 +43,6 @@ services:
       # TODO 2: Construye la URL de conexión a PostgreSQL con el formato:
       #   postgresql://<usuario>:<password>@<host>:<puerto>/<basededatos>
       #   El host NO es "localhost": es el nombre del servicio "database".
-       postgresql://<usuario>:<password>@database:5432/<basededatos>
     DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB}
     depends_on:
       database:
