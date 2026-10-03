@@ -12,4 +12,4 @@ class Config:
     #         docker-compose.yml (host "api", puerto 8000). Deja un valor
     #         por defecto que sirva si ejecutas este servicio SIN Docker,
     #         directamente en tu máquina (http://localhost:8000).
-    API_URL = os.environ.get("API_URL", "http://api:8000")
+    API_URL = os.environ.get("API_URL", "http://localhost:8000")
