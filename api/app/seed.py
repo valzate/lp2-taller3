@@ -54,12 +54,16 @@ def cargar_datos():
         #   d) Crea el Producto con los campos del JSON y
         #      categoria_id=categoria.id, y agrégalo con db.add(producto).
             producto = Producto(
-                sku=item["sku"],
-                nombre=item["nombre"],
-                descripcion=item["descripcion"],
-                precio=item["precio"],
-                categoria_id=categoria.id,
+            sku=item["sku"],
+            marca=item.get("marca"),
+            nombre=item["nombre"],
+            precio=item["precio"],
+            foto=item.get("foto"),
+            stock=item.get("stock", 0),
+            activo=item.get("activo", True),
+            categoria_id=categoria.id
             )
+            
             db.add(producto)
         
         
