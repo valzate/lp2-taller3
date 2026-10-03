@@ -7,17 +7,15 @@
 
 ## Autor
 
-- [@estudiante](https://www.github.com/estudiante)
+- [@valzate](https://www.github.com/valzate)
 
 ## Descripción del Proyecto
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut quam dolor. Quisque elementum est sed massa gravida convallis. Donec volutpat turpis eget lectus feugiat congue. Morbi rutrum auctor eleifend. Etiam iaculis libero tellus, vel aliquet erat tempor sed. Duis efficitur quam vel sapien luctus, sed semper lacus mollis. Suspendisse non nunc eleifend, aliquet elit eget, condimentum augue.
-
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus vel nibh fringilla, porta elit vel, consequat libero. Nulla et libero ac nulla ultricies sollicitudin. Sed viverra non nulla id convallis. Morbi vel varius lacus, in maximus nunc. Praesent sed semper diam. Pellentesque vehicula nulla augue, ut porta dolor consequat at.
-
+En este proyecto se explora como dividir las operaciones o los componentes de un trabajo en este caso una tienda en contenedores distintos. Se uso uno para cada parte, el frontend, api y la base de datos.
+En este proyecto se uso una API para la busqueda de las cosas y que sea esta que al llamarla manejara todo el funcionamiento de la aplicación, desde estraer los productos hasta la muestra de los mismos
 ## Proceso
 
-Morbi quam lectus, tempus sit amet mi non, facilisis dignissim erat. Aenean tortor libero, rhoncus eu eleifend ut, volutpat id nisi. Ut porta eros at ante rutrum pharetra. Integer nec nulla dictum, vestibulum ligula id, hendrerit ex. Morbi eget tortor metus.
+Inicialmente se desarrollo el funcionamiento de la API y la estructura de la aplicción, luego el funcionamiento de la aplicación y por ultimo se acomodan el docker compose para poner a que cree las imagenes y funcione la aplicación.
 
 [GUIA.md](docs/GUIA.md)
 
