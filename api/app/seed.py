@@ -56,10 +56,10 @@ def cargar_datos():
             producto = Producto(
                 sku=item["sku"],
                 nombre=item["nombre"],
+                descripcion=item["descripcion"],
                 precio=item["precio"],
-                categoria_id=categoria.id
+                categoria_id=categoria.id,
             )
-
             db.add(producto)
         
         
